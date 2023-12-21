@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#Display "best school" using while and if elif
+
+i=0
+
+while [ $i -lt 10 ]
+do
+    echo "Best School"
+    if [ $i -eq 3 ];
+    then
+        echo "bad luck"
+    elif [ $i -eq 7 ]
+    then
+        echo "good luck"
+    fi
+    i=$((i + 1))
+done
