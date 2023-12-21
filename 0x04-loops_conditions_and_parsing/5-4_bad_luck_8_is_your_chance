@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #Display "best school" using while and if elif
+# "bad luck" for 4th iteration
+# "good luck" for 8 iteration
+# "best school" else
 
 i=0
 
