@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #stop the processes of last file
 
-target_process="4-to_infinity_and_beyond"
-pid=$(pgrep -f "$target_process")
+target="4-to_infinity_and_beyond"
+pid=$(pgrep -f "$target")
 kill "$pid"
+
+#anther answer>>
+#kill "$(pgrep -f "4-to_infinity_and_beyond")"
