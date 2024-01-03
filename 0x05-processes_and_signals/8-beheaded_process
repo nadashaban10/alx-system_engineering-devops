@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#stop pid without using kill or killall
+pkill -f -SIGKILL "7-highlander"

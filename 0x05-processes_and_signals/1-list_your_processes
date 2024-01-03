@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Display all list processes
+
+ps -auxf

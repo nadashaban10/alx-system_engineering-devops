@@ -1,4 +1,4 @@
-the goal if this challenge to move ur images "screenshots of cmd challenge" from ur local machine "ur pc" to remote machine  using SFTP 
+the goal of this challenge to move ur images "screenshots of cmd challenge" from ur local machine "ur pc" to remote machine  using SFTP 
 
 first of all ... go to CMD challenge and solve all the questions with the correct answer , then take screenshot after each 9 questions 
 
