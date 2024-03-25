@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     urlUser = 'https://jsonplaceholder.typicode.com/users/' + argv[1]
     response_name = requests.get(urlUser)
-    name = response_name.json()['name']
+    name = response_name.json()['username']
 
     urlTodo = urlUser + '/todos'
     response_todos = requests.get(urlTodo)
