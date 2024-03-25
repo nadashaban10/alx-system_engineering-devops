@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-'''Python script that returns info'''
-
+'''Python script that
+returns information about his todo list progress.
+'''
 if __name__ == "__main__":
     import requests
     from sys import argv
@@ -13,8 +14,7 @@ if __name__ == "__main__":
     response_todos = requests.get(urlTodo)
     tasks = response_todos.json()
     total_task = len(tasks)
-
-    with open(f"{argv[1]}.csv", "w", newline="") as file:
+    with open(f"{argv[1]}.csv", "w") as file:
         for task in tasks:
-            file.write('"{}", "{}", {}, "{}"\n'.format(
-                    argv[1], name, task["completed"], task["title"]))
+            file.write('"{}","{}","{}","{}"\n'.format(
+                argv[1], name, task["completed"], task["title"]))
