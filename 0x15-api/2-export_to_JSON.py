@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Python script that returns information about his todo list progress in JSON format.'''
+'''Python script that returns info'''
 
 if __name__ == "__main__":
     import requests
@@ -35,4 +35,3 @@ if __name__ == "__main__":
         })
     with open(f"{user_id}.json", "w") as file:
         json.dump(user_data, file)
-
