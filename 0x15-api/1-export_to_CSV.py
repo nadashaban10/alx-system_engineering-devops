@@ -16,5 +16,4 @@ if __name__ == "__main__":
     total_task = len(tasks)
     with open(f"{argv[1]}.csv", "w") as file:
         for task in tasks:
-            task_line = f'"{argv[1]}","{name}","{task["completed"]}","{task["title"]}"\n'
-            file.write(task_line)
+            file.write(f'"{argv[1]}","{name}","{task["completed"]}","{task["title"]}"\n')
