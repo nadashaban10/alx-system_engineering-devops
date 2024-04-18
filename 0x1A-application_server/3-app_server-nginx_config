@@ -1,41 +1,20 @@
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By 507906-web-01;
-    root /var/www/html;
-    index index.html index.htm;
-
-    location /hbnb_static {
-        alias /data/web_static/current;
-        index index.html index.htm;
-    }
-
-    location /redirect_me {
-        return 301 http://cuberule.com/;
-    }
-
-    error_page 404 /404.html;
-    location /404 {
-        root /var/www/html;
-        internal;
-    }
+    listen 80;
+    server_name 127.0.0.1 35.190.188.208;
 
     location /airbnb-onepage/ {
-        proxy_pass http://localhost:5000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+        include proxy_params;
+	proxy_pass http://localhost:5000/airbnb-onepage/;
     }
 
     location /airbnb-dynamic/number_odd_or_even/ {
-        proxy_pass http://localhost:5001;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+        rewrite /airbnb-dynamic/(.*) $1 break;
+        include proxy_params;
+	proxy_pass http://localhost:5001/number_odd_or_even;
+    }
+
+    location / {
+        include proxy_params;
+	proxy_pass http://localhost:5003/;
     }
 }
-
