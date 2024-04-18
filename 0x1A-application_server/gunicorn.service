@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn instance to serve Airbnb application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/path/to/your/application
+ExecStart=/path/to/your/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5003 web_dynamic.2-hbnb:app
+Restart=always
+StandardOutput=file:/tmp/airbnb-access.log
+StandardError=file:/tmp/airbnb-error.log
+
+[Install]
+WantedBy=multi-user.target
+
