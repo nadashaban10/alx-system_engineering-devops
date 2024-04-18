@@ -1,0 +1,12 @@
+
+server {
+       listen 80 default_server;
+
+location /airbnb-onepage/{ proxy_pass http://0.0.0.0:5000;}
+location /hbnb_static/ {alias /data/web_static/current/;}
+add_header X-Served-By "505651-web-01";
+	   listen [::]:80 default_server;
+rewrite ^/redirect_me https://www.google.com permanent;
+
+ error_page 404 /custom_404.html;
+location = /custom_404.html { root /usr/share/nginx/html; internal; }
